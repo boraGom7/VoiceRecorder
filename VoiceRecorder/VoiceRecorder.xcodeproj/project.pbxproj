@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		0485F5F2270BF5E7003922D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F1270BF5E7003922D2 /* AppDelegate.swift */; };
 		0485F5F4270BF5E7003922D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */; };
-		0485F5F6270BF5E7003922D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F5270BF5E7003922D2 /* ViewController.swift */; };
 		0485F5F9270BF5E7003922D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0485F5F7270BF5E7003922D2 /* Main.storyboard */; };
 		0485F5FB270BF5E8003922D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0485F5FA270BF5E8003922D2 /* Assets.xcassets */; };
 		0485F5FE270BF5E8003922D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0485F5FC270BF5E8003922D2 /* LaunchScreen.storyboard */; };
 		0485F607270BF6EB003922D2 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F606270BF6EB003922D2 /* RecorderViewController.swift */; };
+		0485F609270C33A1003922D2 /* borderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F608270C33A1003922D2 /* borderLayer.swift */; };
+		0485F60D270C440F003922D2 /* weatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F60C270C440F003922D2 /* weatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0485F5EE270BF5E7003922D2 /* VoiceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0485F5F1270BF5E7003922D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0485F5F5270BF5E7003922D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0485F5F8270BF5E7003922D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0485F5FA270BF5E8003922D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0485F5FD270BF5E8003922D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0485F5FF270BF5E8003922D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0485F606270BF6EB003922D2 /* RecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
+		0485F608270C33A1003922D2 /* borderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderLayer.swift; sourceTree = "<group>"; };
+		0485F60C270C440F003922D2 /* weatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,9 @@
 		0485F5F0270BF5E7003922D2 /* VoiceRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				0485F60B270C43AF003922D2 /* Base */,
+				0485F60A270C438B003922D2 /* Model */,
 				0485F605270BF6D2003922D2 /* ViewController */,
-				0485F5F1270BF5E7003922D2 /* AppDelegate.swift */,
-				0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */,
-				0485F5F5270BF5E7003922D2 /* ViewController.swift */,
-				0485F5F7270BF5E7003922D2 /* Main.storyboard */,
-				0485F5FA270BF5E8003922D2 /* Assets.xcassets */,
-				0485F5FC270BF5E8003922D2 /* LaunchScreen.storyboard */,
 				0485F5FF270BF5E8003922D2 /* Info.plist */,
 			);
 			path = VoiceRecorder;
@@ -74,8 +72,29 @@
 			isa = PBXGroup;
 			children = (
 				0485F606270BF6EB003922D2 /* RecorderViewController.swift */,
+				0485F60C270C440F003922D2 /* weatherViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0485F60A270C438B003922D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0485F608270C33A1003922D2 /* borderLayer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0485F60B270C43AF003922D2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0485F5F1270BF5E7003922D2 /* AppDelegate.swift */,
+				0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */,
+				0485F5F7270BF5E7003922D2 /* Main.storyboard */,
+				0485F5FA270BF5E8003922D2 /* Assets.xcassets */,
+				0485F5FC270BF5E8003922D2 /* LaunchScreen.storyboard */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0485F5F6270BF5E7003922D2 /* ViewController.swift in Sources */,
 				0485F607270BF6EB003922D2 /* RecorderViewController.swift in Sources */,
 				0485F5F2270BF5E7003922D2 /* AppDelegate.swift in Sources */,
+				0485F60D270C440F003922D2 /* weatherViewController.swift in Sources */,
+				0485F609270C33A1003922D2 /* borderLayer.swift in Sources */,
 				0485F5F4270BF5E7003922D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

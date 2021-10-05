@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RecorderViewController: UIViewController {
     
+    //MARK: -- IBOulet
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerListButton: UIButton!
     @IBOutlet weak var headerSettingButton: UIButton!
@@ -20,19 +22,18 @@ class RecorderViewController: UIViewController {
     
     @IBOutlet weak var pauseWidthConstraint: NSLayoutConstraint!
     
+    //MARK: -- View
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
-        
         setMainBG()
-
-
+        setMainUI()
 
     }
 
+    //MARK: -- IBAction
     @IBAction func goWeather(_ sender: Any) {
-        let weatherVC = storyboard?.instantiateViewController(withIdentifier: "weatherID") as! ViewController
+        let weatherVC = storyboard?.instantiateViewController(withIdentifier: "weatherID") as! weatherViewController
         weatherVC.modalPresentationStyle = .fullScreen
         self.present(weatherVC, animated: true, completion: nil)
     }
@@ -47,9 +48,13 @@ class RecorderViewController: UIViewController {
 
     }
     
+    //MARK: -- Function
+    
+    /* 버튼 UI 레이아웃 */
     func setMainUI() {
-        self.headerListButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        self.headerSettingButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        self.headerListButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 14, right: 12)
+        self.headerSettingButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 14, right: 12)
+        self.headerImageView.layer.addBorder([.bottom], color: UIColor(named: "darkGrayColor")!, width: 0.5)
         
         self.recorderBGView.layer.cornerRadius = 20
         self.recorderBGView.heightAnchor.constraint(equalToConstant: self.view.bounds.height/4.7).isActive = true
@@ -59,6 +64,7 @@ class RecorderViewController: UIViewController {
         self.recordButton.layer.cornerRadius = 15
     }
     
+    /* 메인화면 그라디언트 + 메인 일러스트 */
     func setMainBG() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.mainImageView.bounds
