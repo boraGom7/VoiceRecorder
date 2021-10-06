@@ -27,3 +27,12 @@ class SaveFileViewController: UIViewController {
     */
 
 }
+
+//MARK: -- 버튼 터치 영역 확장
+extension UIButton {
+  open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    let margin: CGFloat = 44
+    let hitArea = self.bounds.insetBy(dx: -margin, dy: -margin)
+    return hitArea.contains(point)
+  }
+}

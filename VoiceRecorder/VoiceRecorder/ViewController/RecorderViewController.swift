@@ -54,15 +54,18 @@ class RecorderViewController: UIViewController {
                 }
         }).disposed(by: disposeBag)
 
-
     }
     
     //MARK: -- Function
+    
+    //MARK: -- 레이아웃 변경 애니메이션
+    //--------* 제약조건을 IBOulet으로 연결해서 constant 변경 */
     
     /* 녹음 시작 */
     func startRecording() {
         self.pauseWidthConstraint.constant = (self.view.bounds.width - 50)/1.5
         self.pauseButton.setTitle("  일시정지", for: .normal)
+        self.pauseButton.backgroundColor = UIColor(named: "darkGrayColor")
         
         UIView.animate(withDuration: 0.6, animations: {
             self.buttonStackView.layoutIfNeeded()
@@ -83,7 +86,7 @@ class RecorderViewController: UIViewController {
     func stopRecording() {
         self.pauseWidthConstraint.constant = (self.view.bounds.width - 50)/3
         self.pauseButton.setTitle("  일시정지", for: .normal)
-        self.pauseButton.backgroundColor = UIColor(named: "darkGrayColor")
+        self.pauseButton.backgroundColor = UIColor(named: "lightGrayColor")
         
         UIView.animate(withDuration: 0.6, animations: {
             self.buttonStackView.layoutIfNeeded()
@@ -97,6 +100,10 @@ class RecorderViewController: UIViewController {
             })
         }, completion: { _ in
             isRecording.onNext(false)
+            
+            let saveFileVC = self.storyboard?.instantiateViewController(withIdentifier: "saveFileID") as! SaveFileViewController
+            saveFileVC.modalPresentationStyle = .fullScreen
+            self.present(saveFileVC, animated: true, completion: nil)
         })
     }
     
