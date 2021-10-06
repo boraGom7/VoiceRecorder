@@ -7,8 +7,10 @@
 
 import UIKit
 import AVFoundation
+import RxSwift
 
 class RecorderViewController: UIViewController {
+    var disposeBag = DisposeBag()
     
     //MARK: -- IBOulet
     @IBOutlet weak var headerImageView: UIImageView!
@@ -39,16 +41,64 @@ class RecorderViewController: UIViewController {
     }
     
     @IBAction func clickRecord(_ sender: Any) {
-        self.pauseWidthConstraint.constant = (self.view.bounds.width - 50)/1.5
-        UIView.animate(withDuration: 0.7, animations: {
-            self.buttonStackView.layoutIfNeeded()
-        }, completion: { _ in
-            
-        })
+        self.recordButton.setImage(UIImage(), for: .normal)
+        self.recordButton.setTitle("", for: .normal)
+        self.pauseButton.setImage(UIImage(), for: .normal)
+        self.pauseButton.setTitle("", for: .normal)
+        
+        isRecording.asObserver()
+            .take(1)
+            .subscribe(onNext: { isRecording in
+                DispatchQueue.main.async {
+                    isRecording ? self.stopRecording() : self.startRecording()
+                }
+        }).disposed(by: disposeBag)
+
 
     }
     
     //MARK: -- Function
+    
+    /* 녹음 시작 */
+    func startRecording() {
+        self.pauseWidthConstraint.constant = (self.view.bounds.width - 50)/1.5
+        self.pauseButton.setTitle("  일시정지", for: .normal)
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            self.buttonStackView.layoutIfNeeded()
+            self.recordButton.setTitle("  중지", for: .normal)
+            self.pauseButton.setTitle("", for: .normal)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                self.pauseButton.setTitle("  일시정지", for: .normal)
+                self.pauseButton.setImage(UIImage(named: "s_pause_icon"), for: .normal)
+                self.recordButton.setImage(UIImage(named: "s_stop_icon"), for: .normal)
+            })
+        }, completion: { _ in
+            isRecording.onNext(true)
+        })
+    }
+    
+    /* 녹음 멈춤 */
+    func stopRecording() {
+        self.pauseWidthConstraint.constant = (self.view.bounds.width - 50)/3
+        self.pauseButton.setTitle("  일시정지", for: .normal)
+        self.pauseButton.backgroundColor = UIColor(named: "darkGrayColor")
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            self.buttonStackView.layoutIfNeeded()
+            self.recordButton.setTitle("  녹음시작", for: .normal)
+            self.pauseButton.setTitle("", for: .normal)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                self.pauseButton.setImage(UIImage(named: "s_pause_icon"), for: .normal)
+                self.recordButton.setImage(UIImage(named: "s_stop_icon"), for: .normal)
+                self.pauseButton.setTitle("  일시정지", for: .normal)
+            })
+        }, completion: { _ in
+            isRecording.onNext(false)
+        })
+    }
     
     /* 버튼 UI 레이아웃 */
     func setMainUI() {
@@ -59,7 +109,7 @@ class RecorderViewController: UIViewController {
         self.recorderBGView.layer.cornerRadius = 20
         self.recorderBGView.heightAnchor.constraint(equalToConstant: self.view.bounds.height/4.7).isActive = true
         
-        self.recordButton.frame.size.width = (self.view.bounds.width - 50)/1.5
+        self.pauseWidthConstraint.constant = (self.view.bounds.width - 50)/3
         self.pauseButton.layer.cornerRadius = 15
         self.recordButton.layer.cornerRadius = 15
     }

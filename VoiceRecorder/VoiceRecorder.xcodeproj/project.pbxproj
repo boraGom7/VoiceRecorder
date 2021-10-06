@@ -16,6 +16,7 @@
 		0485F609270C33A1003922D2 /* borderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F608270C33A1003922D2 /* borderLayer.swift */; };
 		0485F60D270C440F003922D2 /* weatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F60C270C440F003922D2 /* weatherViewController.swift */; };
 		049112B5270D390300FE27D8 /* SaveFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049112B4270D390300FE27D8 /* SaveFileViewController.swift */; };
+		049112B7270D4ED900FE27D8 /* RxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049112B6270D4ED900FE27D8 /* RxModel.swift */; };
 		13B5CF3F9D155D34DD3D8F4C /* Pods_VoiceRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 200D7C2D1F8CB1397ABDE935 /* Pods_VoiceRecorder.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0485F608270C33A1003922D2 /* borderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderLayer.swift; sourceTree = "<group>"; };
 		0485F60C270C440F003922D2 /* weatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherViewController.swift; sourceTree = "<group>"; };
 		049112B4270D390300FE27D8 /* SaveFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileViewController.swift; sourceTree = "<group>"; };
+		049112B6270D4ED900FE27D8 /* RxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxModel.swift; sourceTree = "<group>"; };
 		200D7C2D1F8CB1397ABDE935 /* Pods_VoiceRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3C16EDF2F323D4464C13D1 /* Pods-VoiceRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceRecorder.release.xcconfig"; path = "Target Support Files/Pods-VoiceRecorder/Pods-VoiceRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		B923EB8E3D8CBC9962A7103F /* Pods-VoiceRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceRecorder.debug.xcconfig"; path = "Target Support Files/Pods-VoiceRecorder/Pods-VoiceRecorder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		0485F60A270C438B003922D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				049112B6270D4ED900FE27D8 /* RxModel.swift */,
 				0485F608270C33A1003922D2 /* borderLayer.swift */,
 			);
 			path = Model;
@@ -113,7 +116,6 @@
 				B923EB8E3D8CBC9962A7103F /* Pods-VoiceRecorder.debug.xcconfig */,
 				8A3C16EDF2F323D4464C13D1 /* Pods-VoiceRecorder.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,6 +247,7 @@
 				0485F60D270C440F003922D2 /* weatherViewController.swift in Sources */,
 				0485F609270C33A1003922D2 /* borderLayer.swift in Sources */,
 				049112B5270D390300FE27D8 /* SaveFileViewController.swift in Sources */,
+				049112B7270D4ED900FE27D8 /* RxModel.swift in Sources */,
 				0485F5F4270BF5E7003922D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
