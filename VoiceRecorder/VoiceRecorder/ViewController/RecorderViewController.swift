@@ -32,6 +32,19 @@ class RecorderViewController: UIViewController {
         setMainUI()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        isSaved.asObserver()
+            .take(1)
+            .subscribe(onNext: { isSaved in
+                if isSaved {
+                    self.showToast(message: "저장되었습니다.")
+                }
+            }).disposed(by: disposeBag)
+        
+    }
 
     //MARK: -- IBAction
     @IBAction func goWeather(_ sender: Any) {
@@ -144,6 +157,26 @@ class RecorderViewController: UIViewController {
             
             illustImageView.image = illustImage
         }
+    }
+    
+    func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 60, y: self.view.frame.size.height/1.5, width: 120, height: 35))
+        toastLabel.backgroundColor = UIColor.darkGray.withAlphaComponent(0.9)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 15;
+        toastLabel.clipsToBounds = true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseOut,
+                       animations: {
+            toastLabel.alpha = 0.0
+        },
+                       completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 
 }

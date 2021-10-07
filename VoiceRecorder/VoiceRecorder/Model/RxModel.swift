@@ -9,3 +9,4 @@ import Foundation
 import RxSwift
 
 var isRecording = BehaviorSubject<Bool>(value: false)
+var isSaved = BehaviorSubject<Bool>(value: false)

@@ -49,7 +49,8 @@ class SaveFileViewController: UIViewController {
     }
     
     @IBAction func confirm(_ sender: Any) {
-        //dismiss하고 "저장되었습니다" 토글메시지 띄우기
+        isSaved.onNext(true)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
