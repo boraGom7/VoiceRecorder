@@ -53,6 +53,12 @@ class RecorderViewController: UIViewController {
         self.present(weatherVC, animated: true, completion: nil)
     }
     
+    @IBAction func goList(_ sender: Any) {
+        let folderListVC = storyboard?.instantiateViewController(withIdentifier: "folderID") as! folderListViewController
+        folderListVC.modalPresentationStyle = .fullScreen
+        self.present(folderListVC, animated: true, completion: nil)
+    }
+    
     @IBAction func clickRecord(_ sender: Any) {
         self.recordButton.setImage(UIImage(), for: .normal)
         self.recordButton.setTitle("", for: .normal)

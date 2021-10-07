@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047FDC8B270EB507000B9591 /* folderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FDC8A270EB507000B9591 /* folderListViewController.swift */; };
 		0485F5F2270BF5E7003922D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F1270BF5E7003922D2 /* AppDelegate.swift */; };
 		0485F5F4270BF5E7003922D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */; };
 		0485F5F9270BF5E7003922D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0485F5F7270BF5E7003922D2 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047FDC8A270EB507000B9591 /* folderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderListViewController.swift; sourceTree = "<group>"; };
 		0485F5EE270BF5E7003922D2 /* VoiceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0485F5F1270BF5E7003922D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				0485F606270BF6EB003922D2 /* RecorderViewController.swift */,
 				0485F60C270C440F003922D2 /* weatherViewController.swift */,
 				049112B4270D390300FE27D8 /* SaveFileViewController.swift */,
+				047FDC8A270EB507000B9591 /* folderListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047FDC8B270EB507000B9591 /* folderListViewController.swift in Sources */,
 				0485F607270BF6EB003922D2 /* RecorderViewController.swift in Sources */,
 				0485F5F2270BF5E7003922D2 /* AppDelegate.swift in Sources */,
 				0485F60D270C440F003922D2 /* weatherViewController.swift in Sources */,
