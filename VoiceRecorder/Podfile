@@ -7,4 +7,5 @@ target 'VoiceRecorder' do
 
   # Pods for VoiceRecorder
   pod 'RxSwift'
+  pod 'DropDown'
 end

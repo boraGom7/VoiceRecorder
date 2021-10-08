@@ -129,8 +129,8 @@ class RecorderViewController: UIViewController {
     /* 버튼 UI 레이아웃 */
     func setMainUI() {
         self.headerListButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 14, right: 12)
-        self.headerSettingButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 14, right: 12)
-        self.headerImageView.layer.addBorder([.bottom], color: UIColor(named: "darkGrayColor")!, width: 0.5)
+        self.headerSettingButton.imageEdgeInsets = UIEdgeInsets(top: 9, left: 11, bottom: 13, right: 11)
+        self.headerImageView.layer.addBorder([.bottom], color: UIColor(named: "darkGrayColor")!, width: 0.2)
         
         self.recorderBGView.layer.cornerRadius = 20
         self.recorderBGView.heightAnchor.constraint(equalToConstant: self.view.bounds.height/4.7).isActive = true

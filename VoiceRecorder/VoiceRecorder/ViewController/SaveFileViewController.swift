@@ -26,6 +26,7 @@ class SaveFileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.headerImageView.layer.addBorder([.bottom], color: UIColor(named: "darkGrayColor")!, width: 0.2)
         self.checkButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 8, right: 10)
         self.backButton.imageEdgeInsets = UIEdgeInsets(top: 4, left: 6, bottom: 8, right: 6)
         
