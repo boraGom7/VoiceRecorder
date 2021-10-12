@@ -7,8 +7,10 @@
 
 import UIKit
 import DropDown
+import RxSwift
 
 class folderListViewController: UIViewController {
+    var disposeBag = DisposeBag()
     
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerBackButton: UIButton!
@@ -19,12 +21,32 @@ class folderListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewdidload")
         
         self.folderTableView.dataSource = self
         self.folderTableView.delegate = self
         
-
+        dropDownSelection
+            .asObserver()
+            .subscribe(onNext: { str in
+                DispatchQueue.main.async {
+                    switch str {
+                    case "폴더명 변경":
+                        let selectListVC = self.storyboard?.instantiateViewController(withIdentifier: "selectID") as! selecListViewController
+                        selectListVC.modalPresentationStyle = .fullScreen
+                        self.present(selectListVC, animated: false, completion: nil)
+                    case "폴더 추가":
+                        let plusVC = self.storyboard?.instantiateViewController(withIdentifier: "plusID") as! plusViewController
+                        plusVC.modalPresentationStyle = .overFullScreen
+                        self.present(plusVC, animated: true, completion: nil)
+                    case "폴더 삭제":
+                        let selectListVC = self.storyboard?.instantiateViewController(withIdentifier: "selectID") as! selecListViewController
+                        selectListVC.modalPresentationStyle = .fullScreen
+                        self.present(selectListVC, animated: false, completion: nil)
+                    default:
+                        print("empty str")
+                    }
+                }
+            }).disposed(by: disposeBag)
         
         self.headerImageView.layer.addBorder([.bottom], color: UIColor.white, width: 0.2)
         self.headerBackButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 14, right: 12)
@@ -37,7 +59,6 @@ class folderListViewController: UIViewController {
     }
     
     @IBAction func showDropDown(_ sender: Any) {
-        print("showDropDown")
 
         let dropDown = showDropDownMenu()
         dropDown.dataSource = ["폴더명 변경", "폴더 추가", "폴더 삭제"]
@@ -45,7 +66,10 @@ class folderListViewController: UIViewController {
         dropDown.bottomOffset = CGPoint(x: -self.moreButton.bounds.width*2, y: (dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.show()
         
-        print(dropDown.selectedItem)
+        dropDown.selectionAction = { (index, item) in
+            dropDownSelection.onNext(item)
+            dropDown.clearSelection()
+        }
     }
     
     

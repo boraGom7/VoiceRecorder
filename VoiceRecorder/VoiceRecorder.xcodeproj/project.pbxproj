@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		044D26732710181B0047119C /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D26722710181B0047119C /* DropDownMenu.swift */; };
 		045EB8A9270FECA700433B0A /* tableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EB8A8270FECA700433B0A /* tableViewCell.swift */; };
+		046DE007271518A5000D38E0 /* selecListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE006271518A5000D38E0 /* selecListViewController.swift */; };
+		046DE00927151939000D38E0 /* plusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE00827151939000D38E0 /* plusViewController.swift */; };
 		047FDC8B270EB507000B9591 /* folderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FDC8A270EB507000B9591 /* folderListViewController.swift */; };
 		0485F5F2270BF5E7003922D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F1270BF5E7003922D2 /* AppDelegate.swift */; };
 		0485F5F4270BF5E7003922D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485F5F3270BF5E7003922D2 /* SceneDelegate.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		044D26722710181B0047119C /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		045EB8A8270FECA700433B0A /* tableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCell.swift; sourceTree = "<group>"; };
+		046DE006271518A5000D38E0 /* selecListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selecListViewController.swift; sourceTree = "<group>"; };
+		046DE00827151939000D38E0 /* plusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plusViewController.swift; sourceTree = "<group>"; };
 		047FDC8A270EB507000B9591 /* folderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderListViewController.swift; sourceTree = "<group>"; };
 		0485F5EE270BF5E7003922D2 /* VoiceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0485F5F1270BF5E7003922D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				0485F60C270C440F003922D2 /* weatherViewController.swift */,
 				049112B4270D390300FE27D8 /* SaveFileViewController.swift */,
 				047FDC8A270EB507000B9591 /* folderListViewController.swift */,
+				046DE006271518A5000D38E0 /* selecListViewController.swift */,
+				046DE00827151939000D38E0 /* plusViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -265,9 +271,11 @@
 				0485F60D270C440F003922D2 /* weatherViewController.swift in Sources */,
 				0485F609270C33A1003922D2 /* BorderLayer.swift in Sources */,
 				049112B5270D390300FE27D8 /* SaveFileViewController.swift in Sources */,
+				046DE007271518A5000D38E0 /* selecListViewController.swift in Sources */,
 				049112B7270D4ED900FE27D8 /* RxModel.swift in Sources */,
 				044D26732710181B0047119C /* DropDownMenu.swift in Sources */,
 				0485F5F4270BF5E7003922D2 /* SceneDelegate.swift in Sources */,
+				046DE00927151939000D38E0 /* plusViewController.swift in Sources */,
 				045EB8A9270FECA700433B0A /* tableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1063,7 +1063,6 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		}
 		
         cell.optionLabel.translatesAutoresizingMaskIntoConstraints = false
-        cell.optionLabel.leftAnchor.constraint(equalToConstant: 20).isActive = true
 		cell.optionLabel.textColor = textColor
 		cell.optionLabel.font = textFont
         cell.optionLabel.font = UIFont.systemFont(ofSize: 12)
@@ -1073,12 +1072,12 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
         
 		
 		if let cellConfiguration = cellConfiguration {
-			cell.optionLabel.text = cellConfiguration(index, dataSource[index])
+			cell.optionLabel.text = cellConfiguration(index, "  \(dataSource[index])")
 		} else {
-			cell.optionLabel.text = dataSource[index]
+			cell.optionLabel.text = "  \(dataSource[index])"
 		}
 		
-		customCellConfiguration?(index, dataSource[index], cell)
+		customCellConfiguration?(index, "  \(dataSource[index])", cell)
 	}
 
 	public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

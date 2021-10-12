@@ -12,7 +12,7 @@ func showDropDownMenu() -> DropDown {
     let dropDown = DropDown()
     
     dropDown.backgroundColor = UIColor.white
-    dropDown.cornerRadius = 15
+    dropDown.cornerRadius = 10
     dropDown.width = 112.5
     
     return dropDown
